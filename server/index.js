@@ -5,19 +5,15 @@ const app = express();
 var mfp = require('mfp');
 
 
+// passport.js
 // plaid finance API
 // google fit API
 // myfitnesspal API
 // d3
-// passport.js
 // graphQL
 // material UI
-
+// react router
 app.use(express.static(path.join(__dirname, 'build')));
-
-app.get('/ping', function (req, res) {
- return res.send('pong');
-});
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '../public', 'index.html'));
