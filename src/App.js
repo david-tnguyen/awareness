@@ -1,6 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import mfp from 'mfp';
+
+mfp.fetchSingleDate('davidtn10', '2019-11-15', 'all', function(data){
+  console.log(data);
+});
 
 function App() {
   return (
