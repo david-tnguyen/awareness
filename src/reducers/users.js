@@ -4,7 +4,7 @@ import {
   LOGIN_ERROR
 } from '../constants';
 
-export const user = (state = {
+const user = (state = {
   isLoading: false,
   authenticated: false
 }, action) => {
@@ -19,3 +19,5 @@ export const user = (state = {
       return state;
   }
 }
+
+export default user;
