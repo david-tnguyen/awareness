@@ -1,9 +1,8 @@
 const passport = require('passport');
 const User = require('../models/users');
 
-exports.login = function(req, res, next) {
+exports.login = (req, res, next) => {
   // Do email and password validation for the server
-  console.log('got in here')
 	passport.authenticate('local', function(err, user, info) {
 		if (err) return next(err);
 		if (!user) {
@@ -16,10 +15,10 @@ exports.login = function(req, res, next) {
 			}
 			return res.json({ success: true, message: 'authentication succeeded' });
 		})
-	})(req, res, next)
-}
+	})(req, res, next);
+};
 
-exports.register = function(req, res, next) {
+exports.register = (req, res, next) => {
 	User.findOne({ email: req.body.email }, (err, user) => {
 		// Check if email is already registered
 		if (user) {
@@ -40,4 +39,4 @@ exports.register = function(req, res, next) {
 			});
 		}
 	});
-}
+};

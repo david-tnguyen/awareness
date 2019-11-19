@@ -1,12 +1,38 @@
 const express = require('express');
-const bodyParser = require('body-parser')
-const path = require('path');
-const app = express();
-var mfp = require('mfp');
+const mongoose = require('mongoose');
+const mfp = require('mfp');
 const cors = require('cors');
+const passport = require('passport');
 const users = require('./controllers/users');
-const passport = require('passport')
+const configurePassport = require('./config/passport');
+const configureExpress = require('./config/express');
+const secrets = require('./config/secrets');
+
+const app = express();
 app.use(cors());
+
+const connect = () => {
+	mongoose.connect(secrets.db, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  }, (err, res) => {
+		if (err) {
+			console.log(`Error connecting to ${secrets.db}. ${err}`)
+		} else {
+			console.log(`Successfully connected to ${secrets.db}.`)
+		}
+	});
+};
+
+connect();
+
+mongoose.connection.on('error', console.error);
+mongoose.connection.on('disconnected', connect);
+
+configurePassport(passport);
+configureExpress(app);
+
 
 // passport.js
 // plaid finance API
@@ -16,15 +42,9 @@ app.use(cors());
 // graphQL
 // material UI
 // react router
-app.use(express.static(path.join(__dirname, 'build')));
-app.use(passport.initialize());
-app.use(passport.session());
-
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '../public', 'index.html'));
-});
 
 app.post('/login', users.login);
+app.post('/register', users.register);
 
 app.get('/fitness', (req, res) => {
   mfp.fetchSingleDate('davidtn10', '2019-11-15', 'all', function(data){

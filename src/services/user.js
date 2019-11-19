@@ -1,7 +1,9 @@
+import axios from 'axios';
+
 const login = (data) => {
-  return fetch('http://localhost:8080/login', {
+  return axios({
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    url: 'http://localhost:8080/login',
     data: data
   });
 };

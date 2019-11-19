@@ -20,7 +20,7 @@ export const login = (data, successPath) => {
     userService.login(data)
 
     .then((response) => {
-      console.log('this is the response', response)
+      console.log('my response', response)
       if (response.data.success) {
         dispatch(loginSuccess(data));
       } else {
