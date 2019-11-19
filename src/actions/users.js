@@ -18,9 +18,7 @@ export const login = (data, successPath) => {
   return dispatch => {
     dispatch({ type: types.LOGIN_USER })
     userService.login(data)
-
     .then((response) => {
-      console.log('my response', response)
       if (response.data.success) {
         dispatch(loginSuccess(data));
       } else {

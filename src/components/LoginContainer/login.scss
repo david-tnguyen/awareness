@@ -1,4 +1,15 @@
-.container {
-  color: red;
+.auth-wrapper {
+  height: 100%;
 }
 
+.login-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-wrapper {
+  max-width: 496px;
+}
