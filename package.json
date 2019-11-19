@@ -5,8 +5,10 @@
   "proxy": "http://localhost:8080",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
+    "connect-mongo": "^3.1.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "express-session": "^1.17.0",
     "mfp": "^0.7.0",
     "mongoose": "^5.7.11",
     "node-sass": "^4.13.0",

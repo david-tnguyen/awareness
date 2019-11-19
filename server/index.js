@@ -5,7 +5,7 @@ const app = express();
 var mfp = require('mfp');
 const cors = require('cors');
 const users = require('./controllers/users');
-
+const passport = require('passport')
 app.use(cors());
 
 // passport.js
@@ -17,6 +17,8 @@ app.use(cors());
 // material UI
 // react router
 app.use(express.static(path.join(__dirname, 'build')));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '../public', 'index.html'));

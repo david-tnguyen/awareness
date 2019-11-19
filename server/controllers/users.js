@@ -2,7 +2,8 @@ const passport = require('passport');
 const User = require('../models/users');
 
 exports.login = function(req, res, next) {
-	// Do email and password validation for the server
+  // Do email and password validation for the server
+  console.log('got in here')
 	passport.authenticate('local', function(err, user, info) {
 		if (err) return next(err);
 		if (!user) {
