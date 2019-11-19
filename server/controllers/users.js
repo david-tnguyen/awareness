@@ -1,11 +1,9 @@
-import passport from "passport"
-import User from '../models/users';
-
-// -------------------------------------------
+const passport = require('passport');
+const User = require('../models/users');
 
 exports.login = function(req, res, next) {
 	// Do email and password validation for the server
-	passport.authenticate("local", function(err, user, info) {
+	passport.authenticate('local', function(err, user, info) {
 		if (err) return next(err);
 		if (!user) {
 			return res.json({ success: false, message: info.message });
@@ -15,7 +13,7 @@ exports.login = function(req, res, next) {
 			if (loginErr) {
 				return res.json({ success: false, message: loginErr });
 			}
-			return res.json({ success: true, message: "authentication succeeded" });
+			return res.json({ success: true, message: 'authentication succeeded' });
 		})
 	})(req, res, next)
 }
@@ -24,7 +22,7 @@ exports.register = function(req, res, next) {
 	User.findOne({ email: req.body.email }, (err, user) => {
 		// Check if email is already registered
 		if (user) {
-			res.json({ success: false, message: "Email already in use" });
+			res.json({ success: false, message: 'Email already in use' });
 			return;
 		}
 
