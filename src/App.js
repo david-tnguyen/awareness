@@ -1,13 +1,18 @@
 import React from 'react';
 import './App.css';
-import Login from './components/Login';
+import { Provider } from 'react-redux';
+import { browserHistory } from 'react-router';
+import store from './store';
+import { syncHistoryWithStore } from 'react-router-redux';
 
+const history = syncHistoryWithStore(browserHistory, store);
+const routes = createRoutes(store, history);
 
 function App() {
   return (
-    <div className="App">
-      <Login />
-    </div>
+    <Provider store={store}>
+      {routes}
+    </Provider>
   );
 }
 
