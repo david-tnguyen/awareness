@@ -1,11 +1,11 @@
-export const userService = {
-  login
-};
-
-const login = (username, password) => {
+const login = (data) => {
   return fetch('/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({  username, password })
+    data: data
   });
+};
+
+export const userService = {
+  login
 };

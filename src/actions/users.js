@@ -1,9 +1,5 @@
-import types from '../constants';
+import * as types from '../constants';
 import { userService } from '../services/user';
-
-export const userActions = {
-  login
-};
 
 const loginSuccess = (data) => {
   return {
@@ -18,10 +14,10 @@ const loginError = () => {
   };
 };
 
-const login = (username, password, successPath) => {
+export const login = (data, successPath) => {
   return dispatch => {
     dispatch({ type: types.LOGIN_USER })
-    userService.login(username, password)
+    userService.login(data)
     .then((response) => {
       if (response.data.success) {
         dispatch(loginSuccess(data));

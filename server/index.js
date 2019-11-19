@@ -19,6 +19,8 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '../public', 'index.html'));
 });
 
+app.post('/login', users.login);
+
 app.get('/fitness', (req, res) => {
   mfp.fetchSingleDate('davidtn10', '2019-11-15', 'all', function(data){
     console.log(data);
