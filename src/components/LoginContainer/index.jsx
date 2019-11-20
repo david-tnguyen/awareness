@@ -1,14 +1,21 @@
 import React from 'react';
 import ReactDOM from "react-dom";
+import Input from '../Auth/Input';
 import './login.scss';
 import { connect } from 'react-redux';
 import * as userActions from '../../actions/users';
 
+const emailRef = React.createRef();
+const passwordRef = React.createRef();
+
 class LoginContainer extends React.Component {
-  onLoginSubmit = (event) => {
-    event.preventDefault();
-    const email = ReactDOM.findDOMNode(this.refs.email).value;
-    const password = ReactDOM.findDOMNode(this.refs.password).value;
+  constructor(props) {
+    super(props);
+  }
+  onLoginSubmit = (e) => {
+    e.preventDefault();
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
     this.props.login({ email, password }, this.props.successPath);
   }
 
@@ -22,18 +29,9 @@ class LoginContainer extends React.Component {
           <div className='login-card'>
             <div className='enter-creds'>Sign in with your credentials</div>
             <form className='form-wrapper' onSubmit={this.onLoginSubmit}>
-              <div>
-                <label className='Label'>Email Address</label>
-                <div>
-                  <input className='Input' type='email' ref='email'/>
-                </div>
-              </div>
-              <div>
-                <label className='Label'>Password</label>
-                <div>
-                  <input className='Input' type='password' ref='password'/>
-                </div>
-              </div>
+              <Input ref={emailRef} label='Email Address' inputType='email'/>
+              <Input ref={passwordRef} label='Password' inputType='password'/>
+
               <div>
                 <button className='Button' type='submit'>Log In</button>
               </div>
