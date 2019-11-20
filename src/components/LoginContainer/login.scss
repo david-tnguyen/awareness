@@ -8,20 +8,11 @@
   border-bottom: 1px solid $brand-border-color;
 }
 
-.page {
-  height: 100%;
-}
-
-.auth-wrapper {
-  height: 100%;
-}
-
 .login-wrapper {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .login-card {

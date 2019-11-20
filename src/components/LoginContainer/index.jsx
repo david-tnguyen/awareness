@@ -14,39 +14,37 @@ class LoginContainer extends React.Component {
 
   render() {
     return (
-      <div className='page'>
+      <div>
         <nav className='login-navbar'>
           <h1>Awareness</h1>
         </nav>
-        <div className='auth-wrapper'>
-          <div className='login-wrapper'>
-            <div className='login-card'>
-              <div className='enter-creds'>Sign in with your credentials</div>
-              <form className='form-wrapper' onSubmit={this.onLoginSubmit}>
+        <div className='login-wrapper'>
+          <div className='login-card'>
+            <div className='enter-creds'>Sign in with your credentials</div>
+            <form className='form-wrapper' onSubmit={this.onLoginSubmit}>
+              <div>
+                <label className='Label'>Email Address</label>
                 <div>
-                  <label className='Label'>Email Address</label>
-                  <div>
-                    <input className='Input' type='email' ref='email'/>
-                  </div>
+                  <input className='Input' type='email' ref='email'/>
                 </div>
+              </div>
+              <div>
+                <label className='Label'>Password</label>
                 <div>
-                  <label className='Label'>Password</label>
-                  <div>
-                    <input className='Input' type='password' ref='password'/>
-                  </div>
+                  <input className='Input' type='password' ref='password'/>
                 </div>
-                <div>
-                  <button className='Button' type='submit'>Log In</button>
-                </div>
-                <div className='account-footer'>
-                  <p>
-                    Don't have an account?&nbsp;
-                    <a href='#'>Sign up now</a>
-                  </p>
-                  <a href='/account/reset-password'>Forgot password?</a>
-                </div>
-              </form>
-            </div>
+              </div>
+              <div>
+                <button className='Button' type='submit'>Log In</button>
+              </div>
+              <div className='account-footer'>
+                <p>
+                  Don't have an account?&nbsp;
+                  <a href='#'>Sign up now</a>
+                </p>
+                <a href='/account/reset-password'>Forgot password?</a>
+              </div>
+            </form>
           </div>
         </div>
       </div>
