@@ -56,8 +56,13 @@
   padding: 10px 8px;
   cursor: pointer;
   width: 100%;
+  margin-bottom: 22px;
 }
 
 .account-footer {
   text-align: center;
+}
+
+.signup-label {
+  margin-bottom: $margin-base-bottom;
 }
