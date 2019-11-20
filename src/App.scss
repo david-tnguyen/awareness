@@ -3,7 +3,7 @@ $font-primary: 'Quicksand', Arial, sans-serif;
 html, body, #root {
   font-family: $font-primary;
 	font-weight: 400;
-	font-size: 15px;
+	font-size: 16px;
   height: 100%;
   margin: 0px;
   box-sizing: border-box;
@@ -12,4 +12,9 @@ html, body, #root {
 
 *, *:before, *:after {
   box-sizing: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
