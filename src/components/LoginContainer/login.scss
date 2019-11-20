@@ -1,3 +1,5 @@
+@import '../../../src/styles/styles.scss';
+
 .auth-wrapper {
   height: 100%;
 }
@@ -10,6 +12,45 @@
   flex-direction: column;
 }
 
+.login-card {
+  background-color: white;
+  padding: 70px 60px 60px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
 .form-wrapper {
-  max-width: 496px;
+  width: 400px;
+}
+
+.enter-creds {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: $margin-base-bottom;
+}
+
+.Input {
+  border: 1px solid $brand-border-color;
+  border-radius: $border-radius-base;
+  height: 44px;
+  padding: 8px 10px;
+  width: 100%;
+  margin-bottom: $margin-base-bottom;
+  font-size: 16px;
+}
+
+.Label {
+  font-size: 14px;
+}
+
+.Button {
+  background-color: $brand-primary;
+  color: $brand-white;
+  border-color: transparent;
+  border-radius: $border-radius-base;
+  border-width: 2px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 8px;
+  cursor: pointer;
+  width: 100%;
 }

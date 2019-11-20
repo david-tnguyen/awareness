@@ -16,19 +16,26 @@ class LoginContainer extends React.Component {
     return (
       <div className='auth-wrapper'>
         <div className='login-wrapper'>
-          <h2>Log In</h2>
-          <div>Sign in with your credentials</div>
-          <form className='form-wrapper' onSubmit={this.onLoginSubmit}>
-            <div>
-              <input type='email' ref='email' placeholder='Email'/>
-            </div>
-            <div>
-              <input type='password' ref='password' placeholder='Password'/>
-            </div>
-            <div>
-              <input type='submit' value='Login' />
-            </div>
-          </form>
+          <div className='login-card'>
+            <div className='enter-creds'>Sign in with your credentials</div>
+            <form className='form-wrapper' onSubmit={this.onLoginSubmit}>
+              <div>
+                <label className='Label'>Email Address</label>
+                <div>
+                  <input className='Input' type='email' ref='email'/>
+                </div>
+              </div>
+              <div>
+                <label className='Label'>Password</label>
+                <div>
+                  <input className='Input' type='password' ref='password'/>
+                </div>
+              </div>
+              <div>
+                <button className='Button' type='submit'>Log In</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     );
