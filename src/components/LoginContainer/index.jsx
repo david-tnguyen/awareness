@@ -15,7 +15,7 @@ class LoginContainer extends React.Component {
   render() {
     return (
       <div className='page'>
-        <nav>
+        <nav className='login-navbar'>
           <h1>Awareness</h1>
         </nav>
         <div className='auth-wrapper'>
