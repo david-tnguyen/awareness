@@ -1,6 +1,7 @@
 import React from 'react';
-import ReactDOM from "react-dom";
+import Header from '../Auth/Header';
 import Input from '../Auth/Input';
+import Footer from '../Auth/Footer';
 import './login.scss';
 import { connect } from 'react-redux';
 import * as userActions from '../../actions/users';
@@ -27,7 +28,7 @@ class LoginContainer extends React.Component {
         </nav>
         <div className='login-wrapper'>
           <div className='login-card'>
-            <div className='enter-creds'>Sign in with your credentials</div>
+            <Header label='Sign in with your credentials'/>
             <form className='form-wrapper' onSubmit={this.onLoginSubmit}>
               <Input ref={emailRef} label='Email Address' inputType='email'/>
               <Input ref={passwordRef} label='Password' inputType='password'/>
@@ -35,13 +36,7 @@ class LoginContainer extends React.Component {
               <div>
                 <button className='Button' type='submit'>Log In</button>
               </div>
-              <div className='account-footer'>
-                <p className='signup-label'>
-                  Don't have an account?&nbsp;
-                  <a href='/account/signup'>Sign up now</a>
-                </p>
-                <a href='/account/reset-password'>Forgot password?</a>
-              </div>
+              <Footer />
             </form>
           </div>
         </div>

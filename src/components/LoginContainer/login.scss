@@ -25,12 +25,6 @@
   width: 400px;
 }
 
-.enter-creds {
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: $margin-base-bottom;
-}
-
 .Button {
   background-color: $brand-primary;
   color: $brand-white;
@@ -43,12 +37,4 @@
   cursor: pointer;
   width: 100%;
   margin-bottom: 22px;
-}
-
-.account-footer {
-  text-align: center;
-}
-
-.signup-label {
-  margin-bottom: $margin-base-bottom;
 }
