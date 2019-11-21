@@ -39,6 +39,7 @@ export const login = (data, successPath) => {
       console.log(response);
       if (response.data.success) {
         dispatch(loginSuccess(data));
+        // createBrowserHistory({forceRefresh:true}).push(successPath)
         createBrowserHistory().push(successPath)
       } else {
         dispatch(loginError());
