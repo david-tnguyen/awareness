@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../Auth/Header';
 import Input from '../Auth/Input';
+import Button from '../Auth/Button';
 import Footer from '../Auth/Footer';
 import './login.scss';
 import { connect } from 'react-redux';
@@ -32,10 +33,7 @@ class LoginContainer extends React.Component {
             <form className='form-wrapper' onSubmit={this.onLoginSubmit}>
               <Input ref={emailRef} label='Email Address' inputType='email'/>
               <Input ref={passwordRef} label='Password' inputType='password'/>
-
-              <div>
-                <button className='Button' type='submit'>Log In</button>
-              </div>
+              <Button label='Log In'/>
               <Footer label="Don't have an account?" labelLink='Sign up now'/>
             </form>
           </div>
