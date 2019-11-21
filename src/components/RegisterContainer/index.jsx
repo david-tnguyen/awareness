@@ -16,11 +16,11 @@ class RegisterContainer extends React.Component {
   constructor(props) {
     super(props);
   }
-  onLoginSubmit = (e) => {
+  onRegisterSubmit = (e) => {
     e.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    this.props.login({ email, password }, this.props.successPath);
+    this.props.register({ email, password });
   }
 
   render() {
@@ -32,7 +32,7 @@ class RegisterContainer extends React.Component {
         <div className='login-wrapper'>
           <div className='login-card'>
             <Header label='Create account'/>
-            <form className='form-wrapper' onSubmit={this.onLoginSubmit}>
+            <form className='form-wrapper' onSubmit={this.onRegisterSubmit}>
               <Input ref={firstName} label='First Name' inputType='text'/>
               <Input ref={lastName} label='Last Name' inputType='text'/>
               <Input ref={emailRef} label='Email Address' inputType='email'/>
@@ -49,14 +49,8 @@ class RegisterContainer extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
 
-	let nextPathname = "/"
-
-	try {nextPathname = ownProps.location.state.nextPathname}
-	catch(err) {}
-
 	return {
 		user: state.user,
-		nextPathname // this prop passed in by React Router
 	}
 
 }

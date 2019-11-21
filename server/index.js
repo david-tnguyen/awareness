@@ -43,8 +43,8 @@ configureExpress(app);
 // material UI
 // react router
 
-app.post('/login', users.login);
-app.post('/register', users.register);
+app.post('/account/login', users.login);
+app.post('/account/register', users.register);
 
 app.get('/fitness', (req, res) => {
   mfp.fetchSingleDate('davidtn10', '2019-11-15', 'all', function(data){
