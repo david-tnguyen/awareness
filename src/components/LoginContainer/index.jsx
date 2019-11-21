@@ -36,7 +36,7 @@ class LoginContainer extends React.Component {
               <div>
                 <button className='Button' type='submit'>Log In</button>
               </div>
-              <Footer />
+              <Footer label="Don't have an account?" labelLink='Sign up now'/>
             </form>
           </div>
         </div>
