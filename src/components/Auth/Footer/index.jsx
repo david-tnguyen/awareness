@@ -5,9 +5,9 @@ const Footer = (props) => (
   <div className='account-footer'>
     <p className='signup-label'>
       {props.label}&nbsp;
-      <a href='/account/signup'>{props.labelLink}</a>
+      <a className='auth-link' href={props.link}>{props.labelLink}</a>
     </p>
-    <a href='/account/reset-password'>Forgot password?</a>
+    <a className='auth-link' href='/account/reset-password'>Forgot password?</a>
   </div>
 );
 

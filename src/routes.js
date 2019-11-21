@@ -1,6 +1,7 @@
 import React from "react"
 import LoginContainer from './components/LoginContainer';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import RegisterContainer from "./components/RegisterContainer";
 
 export default () => {
 	// const requireAuth = (nextState, replace, callback) => {
@@ -16,8 +17,9 @@ export default () => {
 
 	return (
     <Router>
-      <Route path="/" component={LoginContainer} />
-      <Route path="login" component={LoginContainer} />
+      {/* <Route path="/" component={LoginContainer} /> */}
+      <Route path="/account/login" component={LoginContainer} />
+      <Route path="/account/register" component={RegisterContainer} />
     </Router>
 	);
 };

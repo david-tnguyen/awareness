@@ -7,3 +7,12 @@
 .signup-label {
   margin-bottom: $margin-base-bottom;
 }
+
+.auth-link {
+  color: $brand-color-1;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

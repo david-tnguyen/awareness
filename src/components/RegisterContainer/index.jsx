@@ -3,14 +3,16 @@ import Header from '../Auth/Header';
 import Input from '../Auth/Input';
 import Button from '../Auth/Button';
 import Footer from '../Auth/Footer';
-import './login.scss';
+import '../LoginContainer/login.scss';
 import { connect } from 'react-redux';
 import * as userActions from '../../actions/users';
 
 const emailRef = React.createRef();
 const passwordRef = React.createRef();
+const firstName = React.createRef();
+const lastName = React.createRef();
 
-class LoginContainer extends React.Component {
+class RegisterContainer extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -29,12 +31,14 @@ class LoginContainer extends React.Component {
         </nav>
         <div className='login-wrapper'>
           <div className='login-card'>
-            <Header label='Sign in with your credentials'/>
+            <Header label='Create account'/>
             <form className='form-wrapper' onSubmit={this.onLoginSubmit}>
+              <Input ref={firstName} label='First Name' inputType='text'/>
+              <Input ref={lastName} label='Last Name' inputType='text'/>
               <Input ref={emailRef} label='Email Address' inputType='email'/>
               <Input ref={passwordRef} label='Password' inputType='password'/>
-              <Button label='Log In'/>
-              <Footer label="Don't have an account?" labelLink='Sign up now' link='/account/register'/>
+              <Button label='Create account'/>
+              <Footer label="Already have an account?" labelLink='Sign in' link='/account/login'/>
             </form>
           </div>
         </div>
@@ -57,4 +61,4 @@ const mapStateToProps = (state, ownProps) => {
 
 }
 
-export default connect(mapStateToProps, userActions)(LoginContainer);
+export default connect(mapStateToProps, userActions)(RegisterContainer);
