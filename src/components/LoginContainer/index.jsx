@@ -21,11 +21,14 @@ class LoginContainer extends React.Component {
     e.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    this.props.login({ email, password }, this.props.successPath)
+    this.props.login({ email, password }, this.props.nextPathname)
     .then((loginMessage) => {
-      this.setState({
-        loginMessage
-      });
+      // only set if there was an error
+      if (loginMessage) {
+        this.setState({
+          loginMessage
+        });
+      }
     });
   }
 
@@ -54,15 +57,17 @@ class LoginContainer extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
 
-	let nextPathname = "/"
+	let nextPathname = '/';
 
-	try {nextPathname = ownProps.location.state.nextPathname}
-	catch(err) {}
+	try {
+    nextPathname = ownProps.location.state.nextPathname
+  }
+	catch(err) {};
 
 	return {
 		user: state.user,
-		nextPathname // this prop passed in by React Router
-	}
+		nextPathname
+	};
 
 }
 
