@@ -13,12 +13,20 @@ const passwordRef = React.createRef();
 class LoginContainer extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loginMessage: ''
+    };
   }
   onLoginSubmit = (e) => {
     e.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    this.props.login({ email, password }, this.props.successPath);
+    this.props.login({ email, password }, this.props.successPath)
+    .then((loginMessage) => {
+      this.setState({
+        loginMessage
+      });
+    });
   }
 
   render() {
@@ -33,6 +41,7 @@ class LoginContainer extends React.Component {
             <form className='form-wrapper' onSubmit={this.onLoginSubmit}>
               <Input ref={emailRef} label='Email Address' inputType='email'/>
               <Input ref={passwordRef} label='Password' inputType='password'/>
+              <div className='loginMessage'>{this.state.loginMessage}</div>
               <Button label='Log In'/>
               <Footer label="Don't have an account?" labelLink='Sign up now' link='/account/register'/>
             </form>

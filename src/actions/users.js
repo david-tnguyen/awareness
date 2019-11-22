@@ -34,13 +34,11 @@ function registerError() {
 export const login = (data, successPath) => {
   return dispatch => {
     dispatch(loginUser());
-    userService.login(data)
+    return userService.login(data)
     .then((response) => {
-      console.log(response);
       if (response.data.success) {
         dispatch(loginSuccess(data));
         history.push(successPath);
-        // createBrowserHistory().push(successPath)
       } else {
         dispatch(loginError());
         return response.data.message;
@@ -58,7 +56,6 @@ export const register = (data) => {
 
 		userService.register(data)
     .then(response => {
-      console.log(response);
       if (response.data.success) {
         dispatch(registerSuccess());
         dispatch(login(data, "/"));
