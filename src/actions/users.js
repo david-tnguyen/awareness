@@ -1,6 +1,6 @@
 import * as types from '../constants';
 import { userService } from '../services/user';
-import { createBrowserHistory } from 'history';
+import history from '../history';
 
 const loginUser = () => {
 	return { type: types.LOGIN_USER };
@@ -39,8 +39,8 @@ export const login = (data, successPath) => {
       console.log(response);
       if (response.data.success) {
         dispatch(loginSuccess(data));
-        // createBrowserHistory({forceRefresh:true}).push(successPath)
-        createBrowserHistory().push(successPath)
+        history.push(successPath);
+        // createBrowserHistory().push(successPath)
       } else {
         dispatch(loginError());
         return response.data.message;

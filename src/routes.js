@@ -1,30 +1,28 @@
 import React from "react"
 import LoginContainer from './components/LoginContainer';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { Router, Route, Redirect } from 'react-router-dom';
 import RegisterContainer from "./components/RegisterContainer";
 import Dashboard from './components/Dashboard';
 import store from './store';
-import { createBrowserHistory } from 'history';
+import history from './history';
 
 export default () => {
-	const requireAuth = (nextState, replace, callback) => {
-    const { user: { authenticated } } = store.getState();
-    console.log(authenticated);
-		return authenticated;
-	}
+  const requireAuth = (nextState, replace, callback) => {
+  const { user: { authenticated } } = store.getState();
+      return authenticated;
+  }
 
-	return (
-    <Router history={createBrowserHistory()}>
-      <Route exact path="/" render={() => (
-        requireAuth() ? (
-          <Redirect to ='/account/login' />
-        ) : (
-          <Dashboard />
-        )
-      )} />
-      <Route path="/account/login" component={LoginContainer} />
-      <Route path="/account/register" component={RegisterContainer} />
-    </Router>
-	);
+  return (
+  <Router history={history}>
+    <Route exact path="/" render={() => (
+      requireAuth() ? (
+        <Dashboard />
+      ) : (
+        <Redirect to ='/account/login' />
+      )
+    )} />
+    <Route path="/account/login" component={LoginContainer} />
+    <Route path="/account/register" component={RegisterContainer} />
+  </Router>
+  );
 };
-
