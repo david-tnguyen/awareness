@@ -12,9 +12,9 @@ const user = (state = {
     case LOGIN_USER:
       return { ...state, isLoading: true };
     case LOGIN_SUCCESS:
-      return { ...state, isLoading: false, authenticated: true };
+      return { ...state, isLoading: false, authenticated: true, error: '' };
     case LOGIN_ERROR:
-      return { ...state, isLoading: false, authenticated: false };
+      return { ...state, isLoading: false, authenticated: false, error: 'error' };
     default:
       return state;
   }

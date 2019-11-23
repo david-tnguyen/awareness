@@ -15,12 +15,22 @@ const lastName = React.createRef();
 class RegisterContainer extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      registerMessage: ''
+    };
   }
   onRegisterSubmit = (e) => {
     e.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    this.props.register({ email, password });
+    this.props.register({ email, password })
+    .then((registerMessage) => {
+      if (registerMessage) {
+        this.setState({
+          registerMessage
+        });
+      }
+    });
   }
 
   render() {
@@ -37,6 +47,7 @@ class RegisterContainer extends React.Component {
               <Input ref={lastName} label='Last Name' inputType='text'/>
               <Input ref={emailRef} label='Email Address' inputType='email'/>
               <Input ref={passwordRef} label='Password' inputType='password'/>
+              <div className='errorMessage'>{this.state.registerMessage}</div>
               <Button label='Create account'/>
               <Footer label="Already have an account?" labelLink='Sign in' link='/account/login'/>
             </form>

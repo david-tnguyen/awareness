@@ -54,15 +54,14 @@ export const register = (data) => {
 	return dispatch => {
 		dispatch(registerUser());
 
-		userService.register(data)
+		return userService.register(data)
     .then(response => {
       if (response.data.success) {
         dispatch(registerSuccess());
         dispatch(login(data, "/"));
       } else {
         dispatch(registerError())
-        let registerMessage = response.data.message
-        return registerMessage
+        return response.data.message;
       }
     })
     .catch(response => {
