@@ -13,12 +13,12 @@ class Dashboard extends React.Component {
           <div className='name'>David</div>
         </div>
         <ul>
-          <NavItem />
-          <li>My Goals</li>
-          <li>Schedule</li>
-          <li>Achievements</li>
-          <li>Statistics</li>
-          <li>Settings</li>
+          <NavItem icon='home' label='home'/>
+          <NavItem icon='outlined_flag' label='my goals'/>
+          <NavItem icon='schedule' label='schedule'/>
+          <NavItem icon='emoji_events' label='achievements'/>
+          <NavItem icon='show_chart' label='statistics'/>
+          <NavItem icon='brightness_low' label='settings'/>
         </ul>
       </nav>
     );
