@@ -7,13 +7,22 @@ class Dashboard extends React.Component {
   render() {
     return (
       <nav className='dashboard-nav'>
-        <div className='dashboard-profile'>
-          <img src={profile} alt="profile" className='profile'/>
+        <div className='profile-container'>
+          <img src={profile} alt="profile" className='photo'/>
+          <div className='name'>David</div>
         </div>
         <ul>
-          <li>Test</li>
-          <li>Test 2</li>
-          <li>Test 3</li>
+          <li>
+            <a>
+              <i className='material-icons'>home</i>
+              <span className='navlink-text'>Home</span>
+            </a>
+          </li>
+          <li>My Goals</li>
+          <li>Schedule</li>
+          <li>Achievements</li>
+          <li>Statistics</li>
+          <li>Settings</li>
         </ul>
       </nav>
     );
