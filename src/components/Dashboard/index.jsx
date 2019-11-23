@@ -1,26 +1,29 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import './dashboard.scss';
+import profile from '../../assets/profile.png';
 
 class Dashboard extends React.Component {
   render() {
     return (
-      <h1>My Profile</h1>
+      <nav className='dashboard-nav'>
+        <div className='dashboard-profile'>
+          <img src={profile} alt="profile" className='profile'/>
+        </div>
+        <ul>
+          <li>Test</li>
+          <li>Test 2</li>
+          <li>Test 3</li>
+        </ul>
+      </nav>
     );
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-
-	let nextPathname = "/"
-
-	try {nextPathname = ownProps.location.state.nextPathname}
-	catch(err) {}
-
+const mapStateToProps = (state) => {
 	return {
-		user: state.user,
-		nextPathname // this prop passed in by React Router
+		user: state.user
 	}
-
 }
 
 export default connect(mapStateToProps, null)(Dashboard);

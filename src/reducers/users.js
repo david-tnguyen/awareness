@@ -9,7 +9,7 @@ import {
 
 const user = (state = {
   isLoading: false,
-  authenticated: false
+  authenticated: true
 }, action) => {
   switch(action.type) {
     case LOGIN_USER:

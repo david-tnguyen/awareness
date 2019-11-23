@@ -1,0 +1,22 @@
+.dashboard-nav {
+  background-color: white;
+  width: 250px;
+  height: 100vh;
+  margin: 20px;
+  border-radius: 8px;
+
+  ul {
+    list-style: none;
+  }
+}
+
+.dashboard-profile {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+img.profile {
+  height: 84px;
+  width: 84px;
+}
