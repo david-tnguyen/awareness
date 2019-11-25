@@ -13,7 +13,7 @@ class Dashboard extends React.Component {
           <div className='name'>David</div>
         </div>
         <ul>
-          <NavItem icon='home' label='home'/>
+          <NavItem icon='home' label='home' active='active'/>
           <NavItem icon='outlined_flag' label='my goals'/>
           <NavItem icon='schedule' label='schedule'/>
           <NavItem icon='emoji_events' label='achievements'/>

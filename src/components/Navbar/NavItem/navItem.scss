@@ -1,6 +1,16 @@
+@import '../../../styles/styles.scss';
+
+.navitem-container-active {
+  background-color: $brand-border-color;
+}
+
 .navitem-wrapper {
   display: flex;
   align-items: center;
+}
+
+.active {
+  color: #2c98f0;
 }
 
 .navlink-text {
@@ -9,4 +19,8 @@
 
 .material-icons {
   margin: 0 12px;
+}
+
+.navitem-container-undefined:hover {
+  background-color: $brand-border-color;
 }
