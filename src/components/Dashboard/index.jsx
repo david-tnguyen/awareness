@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './dashboard.scss';
-import profile from '../../assets/profile.png';
+import profile from '../../assets/user.png';
 import NavItem from '../Navbar/NavItem';
 
 class Dashboard extends React.Component {
@@ -10,7 +10,7 @@ class Dashboard extends React.Component {
       <nav className='dashboard-nav'>
         <div className='profile-container'>
           <img src={profile} alt="profile" className='photo'/>
-          <div className='name'>David</div>
+          <div className='name'>Jane</div>
         </div>
         <ul>
           <NavItem icon='home' label='home' active='active'/>
