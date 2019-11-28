@@ -7,20 +7,22 @@ import NavItem from '../Navbar/NavItem';
 class Dashboard extends React.Component {
   render() {
     return (
-      <nav className='dashboard-nav'>
-        <div className='profile-container'>
-          <img src={profile} alt="profile" className='photo'/>
-          <div className='name'>Jane</div>
-        </div>
-        <ul>
-          <NavItem icon='home' label='home' active='active'/>
-          <NavItem icon='outlined_flag' label='my goals'/>
-          <NavItem icon='schedule' label='schedule'/>
-          <NavItem icon='emoji_events' label='achievements'/>
-          <NavItem icon='show_chart' label='statistics'/>
-          <NavItem icon='brightness_low' label='settings'/>
-        </ul>
-      </nav>
+      <div className='dashboard-grid'>
+        <nav className='dashboard-nav'>
+          <div className='profile-container'>
+            <img src={profile} alt="profile" className='photo'/>
+            <div className='name'>Jane</div>
+          </div>
+          <ul>
+            <NavItem icon='home' label='home' active='active'/>
+            <NavItem icon='outlined_flag' label='my goals'/>
+            <NavItem icon='schedule' label='schedule'/>
+            <NavItem icon='emoji_events' label='achievements'/>
+            <NavItem icon='show_chart' label='statistics'/>
+            <NavItem icon='brightness_low' label='settings'/>
+          </ul>
+        </nav>
+      </div>
     );
   }
 }

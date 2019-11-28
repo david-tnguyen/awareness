@@ -43,6 +43,13 @@ configureExpress(app);
 // material UI
 // react router
 
+// net worth over time | cash over time | investment over time | credit over time
+// budgeting goal | budgeting by categories
+// savings goal by EOY
+//
+// spending over time
+// spend by category
+
 app.post('/account/login', users.login);
 app.post('/account/register', users.register);
 
