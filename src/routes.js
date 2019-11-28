@@ -2,7 +2,7 @@ import React from "react"
 import LoginContainer from './components/LoginContainer';
 import { Router, Route, Redirect } from 'react-router-dom';
 import RegisterContainer from "./components/RegisterContainer";
-import Dashboard from './components/Dashboard';
+import Navbar from './components/Navbar';
 import store from './store';
 import history from './history';
 
@@ -16,7 +16,7 @@ export default () => {
   <Router history={history}>
     <Route exact path="/" render={() => (
       requireAuth() ? (
-        <Dashboard />
+        <Navbar />
       ) : (
         <Redirect to ='/account/login' />
       )
