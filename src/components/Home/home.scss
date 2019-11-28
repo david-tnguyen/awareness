@@ -1,0 +1,85 @@
+.home-grid {
+  display: grid;
+  grid-template-columns: 2.5fr 2fr 2fr 2fr 2fr 2.5fr ;
+  grid-template-areas:
+    'nav net cash invest credit account'
+    'nav bgtgoal bgtcat bgtcat bgtcat account'
+    'nav svgs svgs svgs svgsnow account';
+  grid-gap: 18px;
+  grid-template-rows: 33.3%;
+  margin: 20px;
+}
+
+@mixin centerGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+};
+
+@mixin blankLayoutGrid {
+  background-color: #01678a;
+  height:100%;
+  width: 100%;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.one {
+  grid-column: 1 / 2;
+  grid-area: nav;
+}
+
+.two {
+  @include centerGrid;
+  @include blankLayoutGrid;
+  grid-area: net;
+}
+
+.three {
+  @include centerGrid;
+  @include blankLayoutGrid;
+  grid-area: cash;
+}
+
+.four {
+  @include centerGrid;
+  @include blankLayoutGrid;
+  grid-area: invest;
+}
+
+.five {
+  @include centerGrid;
+  @include blankLayoutGrid;
+  grid-area: credit;
+}
+
+.six {
+  @include centerGrid;
+  @include blankLayoutGrid;
+  grid-area: bgtgoal;
+}
+
+.seven {
+  @include centerGrid;
+  @include blankLayoutGrid;
+  grid-area: bgtcat;
+}
+
+.eight {
+  @include centerGrid;
+  @include blankLayoutGrid;
+  grid-area: svgs;
+}
+
+.eleven {
+  @include centerGrid;
+  @include blankLayoutGrid;
+  grid-area: svgsnow;
+}
+
+.home-account {
+  @include centerGrid;
+  @include blankLayoutGrid;
+  grid-area: account;
+}
