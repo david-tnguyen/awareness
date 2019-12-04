@@ -30,7 +30,7 @@
   grid-area: nav;
 }
 
-.two {
+.two, .three, .four, .five {
   @include centerGrid;
   @include blankLayoutGrid;
   background-color: white;
@@ -42,24 +42,6 @@
   width: 100%;
   height: 100%;
   text-align: center;
-}
-
-.three {
-  @include centerGrid;
-  @include blankLayoutGrid;
-  grid-area: cash;
-}
-
-.four {
-  @include centerGrid;
-  @include blankLayoutGrid;
-  grid-area: invest;
-}
-
-.five {
-  @include centerGrid;
-  @include blankLayoutGrid;
-  grid-area: credit;
 }
 
 .six {

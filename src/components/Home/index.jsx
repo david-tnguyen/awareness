@@ -35,11 +35,25 @@ class Home extends React.Component {
           <div className='line-wrapper'>
             <LineChart data={data} />
           </div>
-
         </div>
-        <div className='three'>Cash over time</div>
-        <div className='four'>Investments over time</div>
-        <div className='five'>Credit over time</div>
+        <div className='three'>
+          <div>Cash over time</div>
+          <div className='line-wrapper'>
+            <LineChart data={data} />
+          </div>
+        </div>
+        <div className='four'>
+          <div>Investments over time</div>
+          <div className='line-wrapper'>
+            <LineChart data={data} />
+          </div>
+        </div>
+        <div className='five'>
+          <div>Credits over time</div>
+          <div className='line-wrapper'>
+            <LineChart data={data} />
+          </div>
+        </div>
         <div className='six'>Budgeting goals</div>
         <div className='seven'>Budgeting by categories</div>
         <div className='eight'>Saving goals</div>
