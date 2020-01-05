@@ -31,25 +31,25 @@ class Home extends React.Component {
           <Navbar />
         </div>
         <div className='two'>
-          <div>Net worth</div>
+          <div className='chart-title'>Net worth</div>
           <div className='line-wrapper'>
             <LineChart data={data} />
           </div>
         </div>
         <div className='three'>
-          <div>Cash over time</div>
+          <div className='chart-title'>Cash</div>
           <div className='line-wrapper'>
             <LineChart data={data} />
           </div>
         </div>
         <div className='four'>
-          <div>Investments over time</div>
+          <div className='chart-title'>Investments</div>
           <div className='line-wrapper'>
             <LineChart data={data} />
           </div>
         </div>
         <div className='five'>
-          <div>Credits over time</div>
+          <div className='chart-title'>Credits</div>
           <div className='line-wrapper'>
             <LineChart data={data} />
           </div>
